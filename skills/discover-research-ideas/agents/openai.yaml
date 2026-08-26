@@ -1,0 +1,4 @@
+interface:
+  display_name: "有 Taste 的科研 Idea 发掘"
+  short_description: "Discover paper-worthy ideas with evidence and research taste"
+  default_prompt: "Use $discover-research-ideas to discover evidence-grounded, paper-worthy research ideas with strong research taste."

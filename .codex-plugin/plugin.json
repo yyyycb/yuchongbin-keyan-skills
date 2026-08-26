@@ -1,0 +1,22 @@
+{
+  "name": "yuchongbin-keyan-skills",
+  "version": "0.1.0",
+  "description": "A personal collection of evidence-grounded scientific research skills.",
+  "author": {
+    "name": "Yuchongbin"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Yuchongbin Keyan Skills",
+    "shortDescription": "Evidence-grounded skills for scientific research.",
+    "longDescription": "A personal scientific research skill collection for developing research taste, discovering defensible ideas, and grounding claims in literature, open-source baselines, observed failures, causal reasoning, and falsifiable evidence.",
+    "developerName": "Yuchongbin",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "从高质量开源基线和真实缺陷中发掘论文级科研 Idea。",
+      "深读高影响论文的 Idea 谱系，更新我的科研 taste。",
+      "把一个可重复 failure 诊断并重构成自然的新任务。"
+    ]
+  }
+}
