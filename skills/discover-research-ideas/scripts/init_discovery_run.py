@@ -149,7 +149,11 @@ ARTIFACTS = {
 - Causal insight: [FILL]
 - Method derivation: [FILL]
 - Field contribution and durable fallback: [FILL]
-- Closest prior boundary: [FILL]
+- Prior-art search cutoff and sources: [FILL]
+- Closest full-text works: [FILL]
+- Load-bearing novelty axis: [FILL]
+- New prediction absent from closest work: [FILL]
+- Novelty decision: [FILL: PASS | REFRAME | KILL | INCOMPLETE]
 - Figure 1: [FILL]
 - First kill gate: [FILL]
 - Resource fit and leverage: [FILL]
@@ -164,7 +168,11 @@ ARTIFACTS = {
 - Causal insight: [FILL]
 - Method derivation: [FILL]
 - Field contribution and durable fallback: [FILL]
-- Closest prior boundary: [FILL]
+- Prior-art search cutoff and sources: [FILL]
+- Closest full-text works: [FILL]
+- Load-bearing novelty axis: [FILL]
+- New prediction absent from closest work: [FILL]
+- Novelty decision: [FILL: PASS | REFRAME | KILL | INCOMPLETE]
 - Figure 1: [FILL]
 - First kill gate: [FILL]
 - Resource fit and leverage: [FILL]
@@ -179,18 +187,55 @@ ARTIFACTS = {
 - Causal insight: [FILL]
 - Method derivation or justified no-method scope: [FILL]
 - Field contribution and durable fallback: [FILL]
-- Closest prior boundary: [FILL]
+- Prior-art search cutoff and sources: [FILL]
+- Closest full-text works: [FILL]
+- Load-bearing novelty axis: [FILL]
+- New prediction absent from closest work: [FILL]
+- Novelty decision: [FILL: PASS | REFRAME | KILL | INCOMPLETE]
 - Figure 1: [FILL]
 - First kill gate: [FILL]
 - Resource fit and leverage: [FILL]
 """,
-    "08-collision-and-field-audit.md": """# Collision and Field-value Audit
+    "08-collision-and-field-audit.md": """# Novelty and Field-value Audit
 
-## Search coverage and aliases
-[FILL]
+## Candidates frozen before search
+[FILL: problem, causal claim, mechanism principle, evaluation contract, intended contributions, and new prediction for each candidate]
 
-## Closest structural neighbors
-[FILL]
+## Search cutoff and sources
+- Searched at (UTC): [FILL: YYYY-MM-DD]
+- Sources and coverage caveats: [FILL]
+
+## arXiv categories and recent-venue surfaces
+[FILL: relevant categories, latest-90-day and latest-24-month sweeps, full-history search, proceedings/OpenReview where relevant]
+
+## Exact query ledger
+
+| Candidate | Source/category | Exact query | Date filter | Results inspected | Full texts inspected | Caveat |
+|---|---|---|---|---:|---:|---|
+| [FILL] | [FILL] | [FILL] | [FILL] | [FILL] | [FILL] | [FILL] |
+
+## Closest-work matrix
+
+| Candidate | Work and URL | Problem/setting | Causal insight | Mechanism principle | Evaluation unit | Shared structure | Load-bearing difference | Candidate-only prediction | Verdict |
+|---|---|---|---|---|---|---|---|---|---|
+| [FILL] | [FILL] | [FILL] | [FILL] | [FILL] | [FILL] | [FILL] | [FILL] | [FILL] | [FILL] |
+
+## Novelty decisions
+
+### Candidate 1
+- Decision: [FILL: PASS | REFRAME | KILL | INCOMPLETE]
+- Load-bearing novelty axis: [FILL]
+- Claim boundary and rerun trigger: [FILL]
+
+### Candidate 2
+- Decision: [FILL: PASS | REFRAME | KILL | INCOMPLETE]
+- Load-bearing novelty axis: [FILL]
+- Claim boundary and rerun trigger: [FILL]
+
+### Candidate 3
+- Decision: [FILL: PASS | REFRAME | KILL | INCOMPLETE]
+- Load-bearing novelty axis: [FILL]
+- Claim boundary and rerun trigger: [FILL]
 
 ## Naturalness deletion tests
 [FILL]
@@ -201,7 +246,7 @@ ARTIFACTS = {
 ## Conclusion-to-cost leverage
 [FILL]
 
-## Remaining novelty uncertainty
+## Remaining novelty uncertainty and concurrent-work caveat
 [FILL]
 """,
     "09-pilot-gates.md": """# Frozen Pilot Gates

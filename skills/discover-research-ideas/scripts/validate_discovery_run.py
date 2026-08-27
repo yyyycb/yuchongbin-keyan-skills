@@ -18,7 +18,15 @@ REQUIRED = {
     "05-causal-diagnoses.md": ["# Causal Diagnoses", "Discriminating intervention", "Structural explanation"],
     "06-transfer-matrix.md": ["# Requirement Derivation and Structural Transfer", "New prediction"],
     "07-candidate-portfolio.md": ["# Paper-shaped Candidate Portfolio", "FACT", "HYPOTHESIS"],
-    "08-collision-and-field-audit.md": ["# Collision and Field-value Audit", "## Naturalness deletion tests"],
+    "08-collision-and-field-audit.md": [
+        "# Novelty and Field-value Audit",
+        "## Search cutoff and sources",
+        "## arXiv categories and recent-venue surfaces",
+        "## Exact query ledger",
+        "## Closest-work matrix",
+        "## Novelty decisions",
+        "## Naturalness deletion tests",
+    ],
     "09-pilot-gates.md": ["# Frozen Pilot Gates", "PASS/STOP threshold", "Claims forbidden after PASS"],
 }
 
@@ -80,6 +88,32 @@ def validate(run_dir: Path, structure_only: bool) -> tuple[list[str], list[str]]
     defects = contents.get("04-defect-cards.md", "")
     if not structure_only and not re.search(r"\bD[2-4]\b", defects):
         warnings.append("04-defect-cards.md: no D2-D4 verified defect marker found")
+
+    novelty_audit = contents.get("08-collision-and-field-audit.md", "")
+    if not structure_only:
+        decisions = re.findall(
+            r"(?im)^-\s*Decision:\s*(PASS|REFRAME|KILL|INCOMPLETE)\s*$",
+            novelty_audit,
+        )
+        if len(decisions) < 3:
+            errors.append(
+                "08-collision-and-field-audit.md: novelty decision missing for one or more candidates"
+            )
+
+        if not re.search(r"\b20\d{2}-\d{2}-\d{2}\b", novelty_audit):
+            errors.append(
+                "08-collision-and-field-audit.md: no dated search cutoff found"
+            )
+
+        arxiv_full_text_urls = re.findall(
+            r"https?://(?:www\.)?arxiv\.org/(?:abs|pdf|html)/[^\s)>|]+",
+            novelty_audit,
+            flags=re.IGNORECASE,
+        )
+        if len(set(arxiv_full_text_urls)) < 3:
+            errors.append(
+                "08-collision-and-field-audit.md: fewer than 3 arXiv full-text URLs found"
+            )
 
     return errors, warnings
 

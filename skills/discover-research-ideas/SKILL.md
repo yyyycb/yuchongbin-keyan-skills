@@ -1,6 +1,6 @@
 ---
 name: discover-research-ideas
-description: Discover evidence-grounded, paper-worthy research ideas by studying award-winning, highly cited, and high-star open-source papers; reproducing strong baselines; mining repeatable defects; reconstructing idea genealogies and research taste; diagnosing causal bottlenecks; deriving or structurally transferring solution principles; and designing falsifiable field-level contributions. Use when a researcher asks to 发掘科研idea、培养科研taste、从高质量开源论文找缺陷、学习Best Paper如何提出问题和想出方法、把零散failure升成新任务，或构造有领域意义与自然论文叙事的候选方向. Do not use merely to score a finished idea, summarize one paper, or debug code.
+description: Discover evidence-grounded, paper-worthy research ideas by studying award-winning, highly cited, and high-star open-source papers; reproducing strong baselines; mining repeatable defects; reconstructing idea genealogies and research taste; diagnosing causal bottlenecks; deriving or structurally transferring solution principles; auditing current arXiv and recent prior art for collisions; and designing falsifiable field-level contributions. Use when a researcher asks to 发掘科研idea、培养科研taste、从高质量开源论文找缺陷、学习Best Paper如何提出问题和想出方法、检查候选Idea是否已被arXiv工作覆盖、把零散failure升成新任务，或构造有领域意义与自然论文叙事的候选方向. Do not use merely to score a finished idea, summarize one paper, or debug code.
 ---
 
 # Discover Research Ideas
@@ -21,8 +21,10 @@ Apply these rules throughout:
 6. **Diagnose before solving.** Maintain at least three competing causal explanations and design a discriminating intervention before choosing a mechanism.
 7. **Derive before borrowing.** First derive requirements from the target failure. Use another paper only when its causal structure maps and yields a new prediction.
 8. **Diverge before killing.** Produce multiple problem formulations and three paper-shaped candidates before nearest-neighbor and feasibility convergence.
-9. **Keep epistemic labels.** Mark statements as `FACT`, `OBSERVATION`, `INFERENCE`, or `HYPOTHESIS`. Never let packaging upgrade evidence.
-10. **Prefer decisive evidence.** Favor a small experiment that changes the explanation over a large benchmark table that only reports gains.
+9. **Search after invention.** Once a candidate is concrete, run a timestamped arXiv and recent-venue prior-art audit using problem, mechanism, structural, and adjacent-field aliases. Search to falsify novelty, not to confirm it.
+10. **Require non-cosmetic novelty.** A surviving candidate must have a load-bearing distinction from its closest work and yield a new falsifiable prediction. `Not retrieved` never means `novel`.
+11. **Keep epistemic labels.** Mark statements as `FACT`, `OBSERVATION`, `INFERENCE`, or `HYPOTHESIS`. Never let packaging upgrade evidence.
+12. **Prefer decisive evidence.** Favor a small experiment that changes the explanation over a large benchmark table that only reports gains.
 
 ## Choose an operating mode
 
@@ -141,7 +143,18 @@ Do not create diversity by changing only the backbone, dataset, module name, or 
 
 ## Phase 8: Audit novelty, naturalness, and leverage
 
-Search for collision using problem aliases, mechanism aliases, task formulations, and the nearest structural relation. Distinguish `not retrieved` from `novel`.
+Read [references/novelty-and-prior-art-audit.md](references/novelty-and-prior-art-audit.md) completely.
+
+Freeze each candidate's problem, causal claim, mechanism principle, evaluation contract, and intended contribution before searching. Then run a timestamped collision search over current arXiv and the field's recent proceedings using problem aliases, task/capability aliases, mechanism aliases, structural relations, evaluation formulations, and adjacent-field vocabulary. Inspect full text for the closest hits; title and abstract similarity are routing signals, not a novelty verdict.
+
+Assign exactly one novelty decision per candidate:
+
+- `PASS`: one or more load-bearing, non-cosmetic novelty axes survive the closest-work comparison and imply a new falsifiable prediction;
+- `REFRAME`: the observation remains valuable, but the task, mechanism, or claimed contribution collides and must be reconstructed;
+- `KILL`: the load-bearing contribution is already present or only cosmetically different;
+- `INCOMPLETE`: current retrieval or full-text evidence is insufficient, so novelty cannot be claimed.
+
+After any `REFRAME`, rerun the audit on the reconstructed candidate. Do not soften the search query, rename a module, or switch terminology to escape a collision.
 
 Apply these naturalness tests:
 
@@ -175,6 +188,8 @@ A full run is complete only when it contains:
 - competing explanations and a discriminating intervention;
 - three abstraction levels and three paper-shaped candidates;
 - a structural transfer audit where transfer is used;
+- a timestamped arXiv/recent-venue query ledger and full-text closest-work matrix for every surviving candidate;
+- a `PASS`, `REFRAME`, `KILL`, or `INCOMPLETE` novelty decision with a non-cosmetic novelty axis and new prediction;
 - collision, naturalness, field-value, feasibility, and evidence-leverage audits;
 - one frozen kill gate per surviving candidate;
 - an updated taste ledger containing prediction errors, not generic advice.
